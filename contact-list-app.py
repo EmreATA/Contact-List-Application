@@ -12,8 +12,8 @@ db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8')
 
 app.config['MYSQL_DATABASE_HOST'] = db_endpoint.readline().strip()
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'techpro12345'
-app.config['MYSQL_DATABASE_DB'] = 'techpro'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Admin12345'
+app.config['MYSQL_DATABASE_DB'] = 'mydatabaseserver'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 db_endpoint.close()
 mysql = MySQL()
@@ -25,7 +25,7 @@ cursor = connection.cursor()
 
 def init_contact_list_db():
     contact_table = """
-    CREATE TABLE IF NOT EXISTS techpro.contact_list(
+    CREATE TABLE IF NOT EXISTS mydatabaseserver.contact_list(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     number VARCHAR(100) NOT NULL,
