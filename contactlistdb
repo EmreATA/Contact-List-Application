@@ -1,0 +1,7 @@
+#!/bin/bash
+yum update -y
+yum install python3 -y
+pip3 install flask
+pip3 install flask_mysql
+git clone https://github.com/EmreATA/Contact-List-Application.git
+python3 /home/ec2-user/Contact-List-Application/contact-list-app.py
